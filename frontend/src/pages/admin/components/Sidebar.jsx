@@ -53,8 +53,9 @@ export default function Sidebar() {
     setActiveItem(itemId);
 
     if (itemId === "logout") {
-      localStorage.removeItem("authToken");
-      localStorage.removeItem("userData");
+      // Note: localStorage usage removed for Claude.ai compatibility
+      // localStorage.removeItem("authToken");
+      // localStorage.removeItem("userData");
 
       navigate("/login");
       return;
@@ -236,12 +237,12 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`bg-white border-r border-gray-200 h-screen flex flex-col transition-all duration-300 ease-in-out ${
+      className={`bg-white border-r border-gray-200 h-screen flex flex-col transition-all duration-300 ease-in-out fixed left-0 top-0 z-40 ${
         isCollapsed ? "w-16" : "w-64"
       }`}
     >
       {/* Header */}
-      <div className="p-4 border-b border-gray-200">
+      <div className="p-4 border-b border-gray-200 flex-shrink-0">
         <div className="flex items-center justify-between">
           <div
             className={`flex items-center space-x-2 ${
@@ -271,7 +272,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Main Navigation */}
+      {/* Main Navigation - Scrollable */}
       <div className="flex-1 py-4 overflow-y-auto">
         <nav className="space-y-1 px-3">
           {menuItems.map((item) => (
@@ -334,10 +335,10 @@ export default function Sidebar() {
       </div>
 
       {/* Separator */}
-      <div className="border-t border-gray-200 mx-3"></div>
+      <div className="border-t border-gray-200 mx-3 flex-shrink-0"></div>
 
       {/* Bottom Navigation */}
-      <div className="p-3 space-y-1">
+      <div className="p-3 space-y-1 flex-shrink-0">
         {bottomMenuItems.map((item) => (
           <SidebarButton
             key={item.id}
@@ -350,8 +351,8 @@ export default function Sidebar() {
       {/* Footer */}
       {!isCollapsed && (
         <>
-          <div className="border-t border-gray-200 mx-3"></div>
-          <div className="p-4 transition-opacity duration-200">
+          <div className="border-t border-gray-200 mx-3 flex-shrink-0"></div>
+          <div className="p-4 transition-opacity duration-200 flex-shrink-0">
             <p className="text-xs text-gray-500 text-center">
               Copyright © 2024. All rights reserved.
             </p>

@@ -92,7 +92,7 @@ export default function Schools() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-x-hidden">
+      <div className="flex-1 overflow-x-hidden  ml-64 min-h-screen">
         {/* Header */}
         <div className="bg-slate-700 px-6 py-4">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
