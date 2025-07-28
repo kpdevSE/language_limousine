@@ -22,6 +22,11 @@ import ModeToggle from "./components/mode-toggle";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      {/* <div
+        style={{ display: "flex", justifyContent: "flex-end", padding: "1rem" }}
+      >
+        <ModeToggle />
+      </div> */}
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

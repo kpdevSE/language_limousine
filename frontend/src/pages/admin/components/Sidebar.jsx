@@ -25,7 +25,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [activeItem, setActiveItem] = useState("students");
+  const [activeItem, setActiveItem] = useState();
   const [expandedSections, setExpandedSections] = useState({
     users: false,
     students: true,
@@ -259,8 +259,6 @@ export default function Sidebar() {
                 <h2 className="font-semibold text-blue-500">Limousine</h2>
               </div>
             )}
-
-            <ModeToggle />
           </div>
           <button
             onClick={toggleSidebar}
