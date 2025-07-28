@@ -82,23 +82,23 @@ export default function Greeters() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-x-hidden  ml-64 min-h-screen">
+      <div className="flex-1 overflow-x-hidden ml-64 min-h-screen">
         {/* Header */}
-        <div className="bg-slate-700 px-6 py-4">
+        <div className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Search Bar */}
             <div className="relative flex-1 max-w-md mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               <Input
                 type="text"
                 placeholder="Type to search..."
-                className="w-full bg-slate-600 text-white pl-12 pr-4 py-3 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-300 text-sm"
+                className="w-full bg-gray-50 text-gray-800 pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-sm"
               />
             </div>
 
             {/* Admin User */}
             <div className="flex items-center space-x-3 ml-6">
-              <span className="text-white font-medium">Admin User</span>
+              <span className="text-gray-800 font-medium">Admin User</span>
               <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                 <User className="h-5 w-5 text-white" />
               </div>
@@ -115,15 +115,15 @@ export default function Greeters() {
             </h1>
 
             {/* Add Greeter Form */}
-            <Card className="bg-slate-800 border-slate-700 mb-8">
+            <Card className="bg-white border-gray-200 mb-8">
               <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Username */}
                     <div className="space-y-2">
                       <Label
                         htmlFor="username"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Username
                       </Label>
@@ -133,7 +133,7 @@ export default function Greeters() {
                         type="text"
                         value={formData.username}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter username"
                       />
                     </div>
@@ -142,7 +142,7 @@ export default function Greeters() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="email"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Email
                       </Label>
@@ -152,7 +152,7 @@ export default function Greeters() {
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter email"
                       />
                     </div>
@@ -161,7 +161,7 @@ export default function Greeters() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="password"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Password
                       </Label>
@@ -171,14 +171,14 @@ export default function Greeters() {
                         type="password"
                         value={formData.password}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter password"
                       />
                     </div>
 
                     {/* Gender */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-700 text-sm font-medium">
                         Gender
                       </Label>
                       <Select
@@ -187,28 +187,10 @@ export default function Greeters() {
                           handleSelectChange("gender", value)
                         }
                       >
-                        <SelectTrigger className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500">
-                          <SelectValue placeholder="Select Gender" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-slate-700 border-slate-600">
-                          <SelectItem
-                            value="Male"
-                            className="text-white hover:bg-slate-600"
-                          >
-                            Male
-                          </SelectItem>
-                          <SelectItem
-                            value="Female"
-                            className="text-white hover:bg-slate-600"
-                          >
-                            Female
-                          </SelectItem>
-                          <SelectItem
-                            value="Other"
-                            className="text-white hover:bg-slate-600"
-                          >
-                            Other
-                          </SelectItem>
+                        <SelectContent>
+                          <SelectItem value="Male">Male</SelectItem>
+                          <SelectItem value="Female">Female</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -217,7 +199,7 @@ export default function Greeters() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="greeterId"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Greeter ID
                       </Label>
@@ -227,7 +209,7 @@ export default function Greeters() {
                         type="text"
                         value={formData.greeterId}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter greeter ID"
                       />
                     </div>
@@ -236,7 +218,7 @@ export default function Greeters() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="role"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Role
                       </Label>
@@ -246,7 +228,7 @@ export default function Greeters() {
                         type="text"
                         value={formData.role}
                         onChange={handleInputChange}
-                        className="bg-slate-600 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-gray-100 text-gray-800 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         readOnly
                       />
                     </div>
@@ -255,68 +237,49 @@ export default function Greeters() {
                   {/* Form Buttons */}
                   <div className="flex justify-center space-x-4 pt-4">
                     <Button
-                      type="submit"
+                      onClick={handleSubmit}
                       className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium"
                     >
                       Submit
                     </Button>
                     <Button
-                      type="button"
                       onClick={handleReset}
                       className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-lg font-medium"
                     >
                       Reset
                     </Button>
                   </div>
-                </form>
+                </div>
               </CardContent>
             </Card>
 
             {/* Greeters Table */}
-            <Card className="bg-slate-800 border-slate-700 overflow-hidden">
+            <Card className="bg-white border-gray-200 overflow-hidden">
               {/* Table Controls */}
-              <CardHeader className="p-6 border-b border-slate-700">
+              <CardHeader className="p-6 border-b border-gray-200">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-2">
-                    <span className="text-white text-sm">Show</span>
+                    <span className="text-gray-700 text-sm">Show</span>
                     <Select
                       value={entriesPerPage}
                       onValueChange={setEntriesPerPage}
                     >
-                      <SelectTrigger className="w-20 bg-slate-700 text-white border-slate-600">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent className="bg-slate-700 border-slate-600">
-                        <SelectItem
-                          value="10"
-                          className="text-white hover:bg-slate-600"
-                        >
-                          10
-                        </SelectItem>
-                        <SelectItem
-                          value="25"
-                          className="text-white hover:bg-slate-600"
-                        >
-                          25
-                        </SelectItem>
-                        <SelectItem
-                          value="50"
-                          className="text-white hover:bg-slate-600"
-                        >
-                          50
-                        </SelectItem>
+                      <SelectContent>
+                        <SelectItem value="10">10</SelectItem>
+                        <SelectItem value="25">25</SelectItem>
+                        <SelectItem value="50">50</SelectItem>
                       </SelectContent>
                     </Select>
-                    <span className="text-white text-sm">entries</span>
+                    <span className="text-gray-700 text-sm">entries</span>
                   </div>
 
                   <div className="flex items-center space-x-2">
-                    <Label className="text-white text-sm">Search:</Label>
+                    <Label className="text-gray-700 text-sm">Search:</Label>
                     <Input
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="bg-slate-700 text-white border-slate-600 text-sm w-48"
+                      className="bg-white text-gray-800 border-gray-300 text-sm w-48"
                       placeholder="Search greeters..."
                     />
                   </div>
@@ -327,26 +290,26 @@ export default function Greeters() {
               <CardContent className="p-0 overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-slate-700 hover:bg-slate-700">
-                      <TableHead className="text-white font-medium">
+                    <TableRow className="bg-gray-50 hover:bg-gray-50">
+                      <TableHead className="text-gray-700 font-medium">
                         #
                       </TableHead>
-                      <TableHead className="text-white font-medium">
+                      <TableHead className="text-gray-700 font-medium">
                         Username
                       </TableHead>
-                      <TableHead className="text-white font-medium">
+                      <TableHead className="text-gray-700 font-medium">
                         Email
                       </TableHead>
-                      <TableHead className="text-white font-medium">
+                      <TableHead className="text-gray-700 font-medium">
                         Gender
                       </TableHead>
-                      <TableHead className="text-white font-medium">
+                      <TableHead className="text-gray-700 font-medium">
                         Greeter ID
                       </TableHead>
-                      <TableHead className="text-white font-medium">
+                      <TableHead className="text-gray-700 font-medium">
                         Status
                       </TableHead>
-                      <TableHead className="text-white font-medium">
+                      <TableHead className="text-gray-700 font-medium">
                         Action
                       </TableHead>
                     </TableRow>
@@ -355,24 +318,24 @@ export default function Greeters() {
                     {greeters.map((greeter, index) => (
                       <TableRow
                         key={greeter.id}
-                        className="border-slate-700 hover:bg-slate-700"
+                        className="border-gray-200 hover:bg-gray-50"
                       >
-                        <TableCell className="text-white">
+                        <TableCell className="text-gray-800">
                           {index + 1}
                         </TableCell>
-                        <TableCell className="text-white">
+                        <TableCell className="text-gray-800">
                           {greeter.username}
                         </TableCell>
-                        <TableCell className="text-white">
+                        <TableCell className="text-gray-800">
                           {greeter.email}
                         </TableCell>
-                        <TableCell className="text-white">
+                        <TableCell className="text-gray-800">
                           {greeter.gender}
                         </TableCell>
-                        <TableCell className="text-white">
+                        <TableCell className="text-gray-800">
                           {greeter.greeterId}
                         </TableCell>
-                        <TableCell className="text-white">
+                        <TableCell className="text-gray-800">
                           {greeter.status}
                         </TableCell>
                         <TableCell>
