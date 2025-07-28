@@ -90,21 +90,21 @@ export default function SubDrivers() {
       {/* Main Content Area */}
       <div className="flex-1 overflow-x-hidden  ml-64 min-h-screen">
         {/* Header */}
-        <div className="bg-slate-700 px-6 py-4">
+        <div className="bg-white px-6 py-4 border-b border-gray-200">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Search Bar */}
             <div className="relative flex-1 max-w-md mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               <Input
                 type="text"
                 placeholder="Type to search..."
-                className="w-full bg-slate-600 text-white pl-12 pr-4 py-3 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-300 text-sm"
+                className="w-full bg-gray-50 text-gray-900 pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-sm"
               />
             </div>
 
             {/* Admin User */}
             <div className="flex items-center space-x-3 ml-6">
-              <span className="text-white font-medium">Admin User</span>
+              <span className="text-gray-900 font-medium">Admin User</span>
               <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                 <User className="h-5 w-5 text-white" />
               </div>
@@ -113,7 +113,7 @@ export default function SubDrivers() {
         </div>
 
         {/* Main Content */}
-        <div className="p-6 overflow-x-hidden">
+        <div className="p-6 overflow-x-hidden bg-white">
           <div className="max-w-7xl mx-auto">
             {/* Page Title */}
             <h1 className="text-2xl font-semibold text-blue-500 mb-6">
@@ -121,7 +121,7 @@ export default function SubDrivers() {
             </h1>
 
             {/* Add Sub Driver Form */}
-            <Card className="bg-slate-800 border-slate-700 mb-8">
+            <Card className="bg-white border-gray-200 mb-8 shadow-sm">
               <CardContent className="p-6">
                 <div className="space-y-6">
                   {/* First Row */}
@@ -130,7 +130,7 @@ export default function SubDrivers() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="username"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Username
                       </Label>
@@ -140,7 +140,7 @@ export default function SubDrivers() {
                         type="text"
                         value={formData.username}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Language.admin@gmail.com"
                       />
                     </div>
@@ -149,7 +149,7 @@ export default function SubDrivers() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="email"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Email
                       </Label>
@@ -159,7 +159,7 @@ export default function SubDrivers() {
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter email"
                       />
                     </div>
@@ -168,7 +168,7 @@ export default function SubDrivers() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="password"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Password
                       </Label>
@@ -178,7 +178,7 @@ export default function SubDrivers() {
                         type="password"
                         value={formData.password}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="••••••••••"
                       />
                     </div>
@@ -190,7 +190,7 @@ export default function SubDrivers() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="driverId"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Driver ID
                       </Label>
@@ -200,7 +200,7 @@ export default function SubDrivers() {
                         type="text"
                         value={formData.driverId}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter driver ID"
                       />
                     </div>
@@ -209,7 +209,7 @@ export default function SubDrivers() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="vehicleNo"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Vehicle No
                       </Label>
@@ -219,14 +219,14 @@ export default function SubDrivers() {
                         type="text"
                         value={formData.vehicleNo}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter vehicle number"
                       />
                     </div>
 
                     {/* Status */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-700 text-sm font-medium">
                         Status
                       </Label>
                       <Select
@@ -235,19 +235,19 @@ export default function SubDrivers() {
                           handleSelectChange("status", value)
                         }
                       >
-                        <SelectTrigger className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500">
+                        <SelectTrigger className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                           <SelectValue placeholder="Select Status" />
                         </SelectTrigger>
-                        <SelectContent className="bg-slate-700 border-slate-600">
+                        <SelectContent className="bg-white border-gray-200">
                           <SelectItem
                             value="onduty"
-                            className="text-white hover:bg-slate-600"
+                            className="text-gray-900 hover:bg-gray-100"
                           >
                             On Duty
                           </SelectItem>
                           <SelectItem
                             value="offduty"
-                            className="text-white hover:bg-slate-600"
+                            className="text-gray-900 hover:bg-gray-100"
                           >
                             Off Duty
                           </SelectItem>
@@ -259,7 +259,7 @@ export default function SubDrivers() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="role"
-                        className="text-white text-sm font-medium"
+                        className="text-gray-700 text-sm font-medium"
                       >
                         Role
                       </Label>
@@ -269,7 +269,7 @@ export default function SubDrivers() {
                         type="text"
                         value={formData.role}
                         onChange={handleInputChange}
-                        className="bg-slate-600 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-gray-100 text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         readOnly
                       />
                     </div>
@@ -297,50 +297,50 @@ export default function SubDrivers() {
             </Card>
 
             {/* Sub Drivers Table */}
-            <Card className="bg-slate-800 border-slate-700 overflow-hidden">
+            <Card className="bg-white border-gray-200 overflow-hidden shadow-sm">
               {/* Table Controls */}
-              <CardHeader className="p-6 border-b border-slate-700">
+              <CardHeader className="p-6 border-b border-gray-200">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-2">
-                    <span className="text-white text-sm">Show</span>
+                    <span className="text-gray-700 text-sm">Show</span>
                     <Select
                       value={entriesPerPage}
                       onValueChange={setEntriesPerPage}
                     >
-                      <SelectTrigger className="w-20 bg-slate-700 text-white border-slate-600">
+                      <SelectTrigger className="w-20 bg-white text-gray-900 border-gray-300">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-700 border-slate-600">
+                      <SelectContent className="bg-white border-gray-200">
                         <SelectItem
                           value="10"
-                          className="text-white hover:bg-slate-600"
+                          className="text-gray-900 hover:bg-gray-100"
                         >
                           10
                         </SelectItem>
                         <SelectItem
                           value="25"
-                          className="text-white hover:bg-slate-600"
+                          className="text-gray-900 hover:bg-gray-100"
                         >
                           25
                         </SelectItem>
                         <SelectItem
                           value="50"
-                          className="text-white hover:bg-slate-600"
+                          className="text-gray-900 hover:bg-gray-100"
                         >
                           50
                         </SelectItem>
                       </SelectContent>
                     </Select>
-                    <span className="text-white text-sm">entries</span>
+                    <span className="text-gray-700 text-sm">entries</span>
                   </div>
 
                   <div className="flex items-center space-x-2">
-                    <Label className="text-white text-sm">Search:</Label>
+                    <Label className="text-gray-700 text-sm">Search:</Label>
                     <Input
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="bg-slate-700 text-white border-slate-600 text-sm w-48"
+                      className="bg-white text-gray-900 border-gray-300 text-sm w-48"
                       placeholder="Search sub drivers..."
                     />
                   </div>
@@ -352,36 +352,36 @@ export default function SubDrivers() {
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="bg-slate-700">
-                        <th className="text-white font-medium text-left px-4 py-3 border-b border-slate-600">
+                      <tr className="bg-gray-50">
+                        <th className="text-gray-700 font-medium text-left px-4 py-3 border-b border-gray-200">
                           #
                         </th>
-                        <th className="text-white font-medium text-left px-4 py-3 border-b border-slate-600">
+                        <th className="text-gray-700 font-medium text-left px-4 py-3 border-b border-gray-200">
                           Username
                         </th>
-                        <th className="text-white font-medium text-left px-4 py-3 border-b border-slate-600">
+                        <th className="text-gray-700 font-medium text-left px-4 py-3 border-b border-gray-200">
                           Email
                         </th>
-                        <th className="text-white font-medium text-left px-4 py-3 border-b border-slate-600">
+                        <th className="text-gray-700 font-medium text-left px-4 py-3 border-b border-gray-200">
                           Driver ID
                         </th>
-                        <th className="text-white font-medium text-left px-4 py-3 border-b border-slate-600">
+                        <th className="text-gray-700 font-medium text-left px-4 py-3 border-b border-gray-200">
                           Vehicle No
                         </th>
-                        <th className="text-white font-medium text-left px-4 py-3 border-b border-slate-600">
+                        <th className="text-gray-700 font-medium text-left px-4 py-3 border-b border-gray-200">
                           Status
                         </th>
-                        <th className="text-white font-medium text-left px-4 py-3 border-b border-slate-600">
+                        <th className="text-gray-700 font-medium text-left px-4 py-3 border-b border-gray-200">
                           Action
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       {filteredSubDrivers.length === 0 ? (
-                        <tr className="border-slate-700">
+                        <tr className="border-gray-200">
                           <td
                             colSpan={7}
-                            className="text-white text-center py-8 px-4 border-b border-slate-700"
+                            className="text-gray-700 text-center py-8 px-4 border-b border-gray-200"
                           >
                             No Sub Driver users found.
                           </td>
@@ -390,27 +390,27 @@ export default function SubDrivers() {
                         filteredSubDrivers.map((driver, index) => (
                           <tr
                             key={driver.id}
-                            className="border-slate-700 hover:bg-slate-700"
+                            className="border-gray-200 hover:bg-gray-50"
                           >
-                            <td className="text-white px-4 py-3 border-b border-slate-700">
+                            <td className="text-gray-700 px-4 py-3 border-b border-gray-200">
                               {index + 1}
                             </td>
-                            <td className="text-white px-4 py-3 border-b border-slate-700">
+                            <td className="text-gray-700 px-4 py-3 border-b border-gray-200">
                               {driver.username}
                             </td>
-                            <td className="text-white px-4 py-3 border-b border-slate-700">
+                            <td className="text-gray-700 px-4 py-3 border-b border-gray-200">
                               {driver.email}
                             </td>
-                            <td className="text-white px-4 py-3 border-b border-slate-700">
+                            <td className="text-gray-700 px-4 py-3 border-b border-gray-200">
                               {driver.driverId}
                             </td>
-                            <td className="text-white px-4 py-3 border-b border-slate-700">
+                            <td className="text-gray-700 px-4 py-3 border-b border-gray-200">
                               {driver.vehicleNo}
                             </td>
-                            <td className="text-white px-4 py-3 border-b border-slate-700">
+                            <td className="text-gray-700 px-4 py-3 border-b border-gray-200">
                               {driver.status}
                             </td>
-                            <td className="px-4 py-3 border-b border-slate-700">
+                            <td className="px-4 py-3 border-b border-gray-200">
                               <Button
                                 variant="destructive"
                                 size="sm"
@@ -430,7 +430,7 @@ export default function SubDrivers() {
             </Card>
 
             {/* Pagination Info */}
-            <div className="mt-4 flex justify-between items-center text-white text-sm">
+            <div className="mt-4 flex justify-between items-center text-gray-700 text-sm">
               <span>
                 Showing 1 to {filteredSubDrivers.length} of {subDrivers.length}{" "}
                 entries
@@ -439,7 +439,7 @@ export default function SubDrivers() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="bg-gray-600 text-white border-gray-500 hover:bg-gray-700"
+                  className="bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
                   disabled
                 >
                   Prev
@@ -454,7 +454,7 @@ export default function SubDrivers() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="bg-gray-600 text-white border-gray-500 hover:bg-gray-700"
+                  className="bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
                   disabled
                 >
                   Next

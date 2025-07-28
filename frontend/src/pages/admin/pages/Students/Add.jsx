@@ -230,21 +230,21 @@ export default function Add() {
       {/* Main Content Area - Adjusted for fixed sidebar */}
       <div className="flex-1 ml-64 min-h-screen">
         {/* Header */}
-        <div className="bg-slate-700 px-6 py-4">
+        <div className="bg-gray-100 px-6 py-4 border-b border-gray-200">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Search Bar */}
             <div className="relative flex-1 max-w-md mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               <Input
                 type="text"
                 placeholder="Type to search..."
-                className="w-full bg-slate-600 text-white pl-12 pr-4 py-3 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-300 text-sm"
+                className="w-full bg-white text-gray-900 pl-12 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400 text-sm"
               />
             </div>
 
             {/* Admin User */}
             <div className="flex items-center space-x-3 ml-6">
-              <span className="text-white font-medium">Admin User</span>
+              <span className="text-gray-900 font-medium">Admin User</span>
               <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                 <User className="h-5 w-5 text-white" />
               </div>
@@ -253,17 +253,17 @@ export default function Add() {
         </div>
 
         {/* Scrollable Main Content */}
-        <div className="p-6 overflow-y-auto">
+        <div className="p-6 overflow-y-auto bg-gray-50 min-h-screen">
           <div className="max-w-7xl mx-auto">
             {/* Add Student Form */}
-            <Card className="bg-slate-800 border-slate-700 mb-8">
+            <Card className="bg-white border-gray-200 mb-8 shadow-sm">
               <CardContent className="p-6">
                 <div className="space-y-6">
                   {/* First Row */}
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {/* Select the Date */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Select the Date
                       </Label>
                       <div className="relative">
@@ -272,16 +272,16 @@ export default function Add() {
                           type="text"
                           value={formData.date}
                           onChange={handleInputChange}
-                          className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500 pr-10"
+                          className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500 pr-10"
                           placeholder="07/24/2025"
                         />
-                        <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 h-4 w-4" />
+                        <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                       </div>
                     </div>
 
                     {/* Trip */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Trip
                       </Label>
                       <Input
@@ -289,14 +289,14 @@ export default function Add() {
                         type="text"
                         value={formData.trip}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter trip"
                       />
                     </div>
 
                     {/* Actual Arrival Time */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Actual Arrival Time
                       </Label>
                       <Input
@@ -304,13 +304,13 @@ export default function Add() {
                         type="time"
                         value={formData.actualArrivalTime}
                         onChange={handleInputChange}
-                        className="bg-slate-600 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                       />
                     </div>
 
                     {/* Arrival Time */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Arrival Time
                       </Label>
                       <Input
@@ -318,7 +318,7 @@ export default function Add() {
                         type="time"
                         value={formData.arrivalTime}
                         onChange={handleInputChange}
-                        className="bg-slate-600 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                       />
                     </div>
                   </div>
@@ -327,7 +327,7 @@ export default function Add() {
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {/* Flight */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Flight
                       </Label>
                       <Input
@@ -335,14 +335,14 @@ export default function Add() {
                         type="text"
                         value={formData.flight}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter flight"
                       />
                     </div>
 
                     {/* D or I */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         D or I
                       </Label>
                       <Input
@@ -350,14 +350,14 @@ export default function Add() {
                         type="text"
                         value={formData.dOrI}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="D or I"
                       />
                     </div>
 
                     {/* M or F */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         M or F
                       </Label>
                       <Input
@@ -365,14 +365,14 @@ export default function Add() {
                         type="text"
                         value={formData.mOrF}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="M or F"
                       />
                     </div>
 
                     {/* Student No */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Student No
                       </Label>
                       <Input
@@ -380,7 +380,7 @@ export default function Add() {
                         type="text"
                         value={formData.studentNo}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter student number"
                       />
                     </div>
@@ -390,7 +390,7 @@ export default function Add() {
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {/* Student Given Name */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Student Given Name
                       </Label>
                       <Input
@@ -398,14 +398,14 @@ export default function Add() {
                         type="text"
                         value={formData.studentGivenName}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter given name"
                       />
                     </div>
 
                     {/* Student Family Name */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Student Family Name
                       </Label>
                       <Input
@@ -413,14 +413,14 @@ export default function Add() {
                         type="text"
                         value={formData.studentFamilyName}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter family name"
                       />
                     </div>
 
                     {/* Host Given Name */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Host Given Name
                       </Label>
                       <Input
@@ -428,14 +428,14 @@ export default function Add() {
                         type="text"
                         value={formData.hostGivenName}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter host given name"
                       />
                     </div>
 
                     {/* Host Family Name */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Host Family Name
                       </Label>
                       <Input
@@ -443,7 +443,7 @@ export default function Add() {
                         type="text"
                         value={formData.hostFamilyName}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter host family name"
                       />
                     </div>
@@ -453,7 +453,7 @@ export default function Add() {
                   <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                     {/* Phone */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Phone
                       </Label>
                       <Input
@@ -461,14 +461,14 @@ export default function Add() {
                         type="text"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter phone"
                       />
                     </div>
 
                     {/* Address */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         Address
                       </Label>
                       <Input
@@ -476,14 +476,14 @@ export default function Add() {
                         type="text"
                         value={formData.address}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter address"
                       />
                     </div>
 
                     {/* City */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         City
                       </Label>
                       <Input
@@ -491,14 +491,14 @@ export default function Add() {
                         type="text"
                         value={formData.city}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter city"
                       />
                     </div>
 
                     {/* School */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         School
                       </Label>
                       <Input
@@ -506,14 +506,14 @@ export default function Add() {
                         type="text"
                         value={formData.school}
                         onChange={handleInputChange}
-                        className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500"
+                        className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Enter school"
                       />
                     </div>
 
                     {/* Client */}
                     <div className="space-y-2">
-                      <Label className="text-white text-sm font-medium">
+                      <Label className="text-gray-900 text-sm font-medium">
                         client
                       </Label>
                       <Select
@@ -522,19 +522,19 @@ export default function Add() {
                           handleSelectChange("client", value)
                         }
                       >
-                        <SelectTrigger className="bg-slate-700 text-white border-slate-600 focus:border-blue-500 focus:ring-blue-500">
+                        <SelectTrigger className="bg-white text-gray-900 border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                           <SelectValue placeholder="Select Client" />
                         </SelectTrigger>
-                        <SelectContent className="bg-slate-700 border-slate-600">
+                        <SelectContent className="bg-white border-gray-300">
                           <SelectItem
                             value="client1"
-                            className="text-white hover:bg-slate-600"
+                            className="text-gray-900 hover:bg-gray-100"
                           >
                             Client 1
                           </SelectItem>
                           <SelectItem
                             value="client2"
-                            className="text-white hover:bg-slate-600"
+                            className="text-gray-900 hover:bg-gray-100"
                           >
                             Client 2
                           </SelectItem>
@@ -555,7 +555,7 @@ export default function Add() {
                     <Button
                       type="button"
                       onClick={handleReset}
-                      className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-medium"
+                      className="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-medium"
                     >
                       Reset
                     </Button>
@@ -565,50 +565,50 @@ export default function Add() {
             </Card>
 
             {/* Students Table */}
-            <Card className="bg-slate-800 border-slate-700 overflow-hidden">
+            <Card className="bg-white border-gray-200 overflow-hidden shadow-sm">
               {/* Table Controls */}
-              <CardHeader className="p-6 border-b border-slate-700">
+              <CardHeader className="p-6 border-b border-gray-200">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-2">
-                    <span className="text-white text-sm">Show</span>
+                    <span className="text-gray-900 text-sm">Show</span>
                     <Select
                       value={entriesPerPage}
                       onValueChange={setEntriesPerPage}
                     >
-                      <SelectTrigger className="w-20 bg-slate-700 text-white border-slate-600">
+                      <SelectTrigger className="w-20 bg-white text-gray-900 border-gray-300">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-700 border-slate-600">
+                      <SelectContent className="bg-white border-gray-300">
                         <SelectItem
                           value="10"
-                          className="text-white hover:bg-slate-600"
+                          className="text-gray-900 hover:bg-gray-100"
                         >
                           10
                         </SelectItem>
                         <SelectItem
                           value="25"
-                          className="text-white hover:bg-slate-600"
+                          className="text-gray-900 hover:bg-gray-100"
                         >
                           25
                         </SelectItem>
                         <SelectItem
                           value="50"
-                          className="text-white hover:bg-slate-600"
+                          className="text-gray-900 hover:bg-gray-100"
                         >
                           50
                         </SelectItem>
                       </SelectContent>
                     </Select>
-                    <span className="text-white text-sm">entries</span>
+                    <span className="text-gray-900 text-sm">entries</span>
                   </div>
 
                   <div className="flex items-center space-x-2">
-                    <Label className="text-white text-sm">Search:</Label>
+                    <Label className="text-gray-900 text-sm">Search:</Label>
                     <Input
                       type="text"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="bg-slate-700 text-white border-slate-600 text-sm w-48"
+                      className="bg-white text-gray-900 border-gray-300 text-sm w-48"
                       placeholder="Search students..."
                     />
                   </div>
@@ -620,48 +620,48 @@ export default function Add() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="bg-slate-700">
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                      <tr className="bg-gray-50">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           Action
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           Date
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           Trip
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           Actual arrival time
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           Arrival Time
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           Flight
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           D or I
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           M or F
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           student number
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           student given name
                         </th>
-                        <th className="text-white font-medium text-left px-3 py-2 border-b border-slate-600 text-xs">
+                        <th className="text-gray-900 font-medium text-left px-3 py-2 border-b border-gray-200 text-xs">
                           s
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       {paginatedStudents.length === 0 ? (
-                        <tr className="border-slate-700">
+                        <tr className="border-gray-200">
                           <td
                             colSpan={11}
-                            className="text-white text-center py-8 px-4 border-b border-slate-700"
+                            className="text-gray-900 text-center py-8 px-4 border-b border-gray-200"
                           >
                             No students found.
                           </td>
@@ -670,9 +670,9 @@ export default function Add() {
                         paginatedStudents.map((student) => (
                           <tr
                             key={student.id}
-                            className="border-slate-700 hover:bg-slate-700"
+                            className="border-gray-200 hover:bg-gray-50"
                           >
-                            <td className="px-3 py-2 border-b border-slate-700">
+                            <td className="px-3 py-2 border-b border-gray-200">
                               <Button
                                 variant="destructive"
                                 size="sm"
@@ -682,34 +682,34 @@ export default function Add() {
                                 Delete
                               </Button>
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.date}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.trip}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.actualArrivalTime}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.arrivalTime}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.flight}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.dOrI}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.mOrF}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.studentNumber}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs">
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs">
                               {student.studentGivenName}
                             </td>
-                            <td className="text-white px-3 py-2 border-b border-slate-700 text-xs"></td>
+                            <td className="text-gray-900 px-3 py-2 border-b border-gray-200 text-xs"></td>
                           </tr>
                         ))
                       )}
@@ -720,7 +720,7 @@ export default function Add() {
             </Card>
 
             {/* Pagination */}
-            <div className="mt-4 flex justify-between items-center text-white text-sm">
+            <div className="mt-4 flex justify-between items-center text-gray-900 text-sm">
               <span>
                 Showing {startIndex + 1} to{" "}
                 {Math.min(
@@ -735,7 +735,7 @@ export default function Add() {
                   size="sm"
                   onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                   disabled={currentPage === 1}
-                  className="bg-gray-600 text-white border-gray-500 hover:bg-gray-700 disabled:opacity-50"
+                  className="bg-white text-gray-900 border-gray-300 hover:bg-gray-50 disabled:opacity-50"
                 >
                   Prev
                 </Button>
@@ -748,7 +748,7 @@ export default function Add() {
                     className={
                       page === currentPage
                         ? "bg-blue-500 text-white border-blue-500 hover:bg-blue-600"
-                        : "bg-gray-600 text-white border-gray-500 hover:bg-gray-700"
+                        : "bg-white text-gray-900 border-gray-300 hover:bg-gray-50"
                     }
                   >
                     {page}
@@ -757,14 +757,14 @@ export default function Add() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="bg-gray-600 text-white border-gray-500 hover:bg-gray-700"
+                  className="bg-white text-gray-900 border-gray-300 hover:bg-gray-50"
                 >
                   ...
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="bg-gray-600 text-white border-gray-500 hover:bg-gray-700"
+                  className="bg-white text-gray-900 border-gray-300 hover:bg-gray-50"
                 >
                   11
                 </Button>
@@ -775,7 +775,7 @@ export default function Add() {
                     setCurrentPage(Math.min(totalPages, currentPage + 1))
                   }
                   disabled={currentPage === totalPages}
-                  className="bg-gray-600 text-white border-gray-500 hover:bg-gray-700 disabled:opacity-50"
+                  className="bg-white text-gray-900 border-gray-300 hover:bg-gray-50 disabled:opacity-50"
                 >
                   Next
                 </Button>
