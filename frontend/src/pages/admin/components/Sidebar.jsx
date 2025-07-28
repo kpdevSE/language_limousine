@@ -18,6 +18,7 @@ import {
   Download,
   LayoutDashboard,
 } from "lucide-react";
+import ModeToggle from "@/components/mode-toggle";
 
 export default function Sidebar() {
   const navigate = useNavigate();
@@ -258,6 +259,8 @@ export default function Sidebar() {
                 <h2 className="font-semibold text-blue-500">Limousine</h2>
               </div>
             )}
+
+            <ModeToggle />
           </div>
           <button
             onClick={toggleSidebar}

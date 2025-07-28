@@ -39,23 +39,23 @@ export default function AdminDashboard() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="flex-1 ">
+      <div className="flex-1 ml-64 min-h-screen bg-white">
         {/* Header */}
-        <div className="bg-slate-700 px-6 py-4">
+        <div className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Search Bar */}
             <div className="relative flex-1 max-w-md mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               <input
                 type="text"
                 placeholder="Type to search..."
-                className="w-full bg-slate-600 text-white pl-12 pr-4 py-3 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-300 text-sm"
+                className="w-full bg-gray-50 text-gray-800 pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 text-sm"
               />
             </div>
 
             {/* Admin User */}
             <div className="flex items-center space-x-3 ml-6">
-              <span className="text-white font-medium">Admin User</span>
+              <span className="text-gray-800 font-medium">Admin User</span>
               <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                 <User className="h-5 w-5 text-white" />
               </div>
@@ -64,7 +64,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Main Content */}
-        <div className="p-6">
+        <div className="p-6 bg-white">
           <div className="max-w-7xl mx-auto">
             {/* Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

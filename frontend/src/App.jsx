@@ -16,35 +16,42 @@ import AssignDrivers from "./pages/admin/pages/AssignDrivers";
 import Map from "./pages/admin/pages/Map";
 import Profile from "./pages/admin/pages/Profile";
 import PrintMap from "./pages/admin/pages/PrintMap";
+import { ThemeProvider } from "./components/theme-provider";
+import ModeToggle from "./components/mode-toggle";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Admin Pages */}
-        <Route path="/admin/admin-dashboard" element={<AdminDashboard />} />
-        {/* Admin Users */}
-        <Route path="/admin/admin-users/greeters" element={<Greeters />} />
-        <Route path="/admin/admin-users/drivers" element={<Drivers />} />
-        <Route path="/admin/admin-users/school" element={<Schools />} />
-        <Route path="/admin/admin-users/subdrivers" element={<SubDrivers />} />
-        {/* Admin Students */}
-        <Route path="/admin/admin-students/add" element={<Add />} />
-        <Route path="/admin/admin-students/download" element={<Download />} />
-        <Route path="/admin/admin-students/upload" element={<Upload />} />
-        <Route path="/admin/admin-students/update" element={<Update />} />
-        <Route path="/admin/admin-students/view" element={<View />} />
-        <Route
-          path="/admin/admin-waitingtime"
-          element={<UpdatingWaitingTime />}
-        />
-        <Route path="/admin/assigndrivers" element={<AssignDrivers />} />
-        <Route path="/admin/map" element={<Map />} />\
-        <Route path="/admin/profile" element={<Profile />} />
-        <Route path="/admin/printmap" element={<PrintMap />} />
-      </Routes>
-    </Router>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* Admin Pages */}
+          <Route path="/admin/admin-dashboard" element={<AdminDashboard />} />
+          {/* Admin Users */}
+          <Route path="/admin/admin-users/greeters" element={<Greeters />} />
+          <Route path="/admin/admin-users/drivers" element={<Drivers />} />
+          <Route path="/admin/admin-users/school" element={<Schools />} />
+          <Route
+            path="/admin/admin-users/subdrivers"
+            element={<SubDrivers />}
+          />
+          {/* Admin Students */}
+          <Route path="/admin/admin-students/add" element={<Add />} />
+          <Route path="/admin/admin-students/download" element={<Download />} />
+          <Route path="/admin/admin-students/upload" element={<Upload />} />
+          <Route path="/admin/admin-students/update" element={<Update />} />
+          <Route path="/admin/admin-students/view" element={<View />} />
+          <Route
+            path="/admin/admin-waitingtime"
+            element={<UpdatingWaitingTime />}
+          />
+          <Route path="/admin/assigndrivers" element={<AssignDrivers />} />
+          <Route path="/admin/map" element={<Map />} />\
+          <Route path="/admin/profile" element={<Profile />} />
+          <Route path="/admin/printmap" element={<PrintMap />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
