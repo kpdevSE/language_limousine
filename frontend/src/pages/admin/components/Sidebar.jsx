@@ -31,7 +31,7 @@ export default function Sidebar() {
   const [activeItem, setActiveItem] = useState();
   const [expandedSections, setExpandedSections] = useState({
     users: false,
-    students: true,
+    students: false, // Changed from true to false
   });
   const [isMobile, setIsMobile] = useState(false);
 
@@ -49,6 +49,44 @@ export default function Sidebar() {
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  // Set active item based on current path
+  useEffect(() => {
+    const currentPath = location.pathname;
+
+    // Check main menu items
+    const mainItem = menuItems.find((item) => item.path === currentPath);
+    if (mainItem) {
+      setActiveItem(mainItem.id);
+      return;
+    }
+
+    // Check submenu items
+    for (const item of menuItems) {
+      if (item.children) {
+        const childItem = item.children.find(
+          (child) => child.path === currentPath
+        );
+        if (childItem) {
+          setActiveItem(childItem.id);
+          // Auto-expand parent section when child is active
+          setExpandedSections((prev) => ({
+            ...prev,
+            [item.id]: true,
+          }));
+          return;
+        }
+      }
+    }
+
+    // Check bottom menu items
+    const bottomItem = bottomMenuItems.find(
+      (item) => item.path === currentPath
+    );
+    if (bottomItem) {
+      setActiveItem(bottomItem.id);
+    }
+  }, [location.pathname]);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -111,14 +149,12 @@ export default function Sidebar() {
       label: "Dashboard",
       icon: <LayoutDashboard className="w-4 h-4" />,
       path: "/admin/admin-dashboard",
-      active: activeItem === "dashboard",
     },
     {
       id: "users",
       label: "Users",
       icon: <Users className="w-4 h-4" />,
       path: "/admin/admin-users",
-      active: activeItem === "users",
       expandable: true,
       expanded: expandedSections.users,
       children: [
@@ -153,7 +189,6 @@ export default function Sidebar() {
       label: "Students",
       icon: <GraduationCap className="w-4 h-4" />,
       path: "/students",
-      active: activeItem === "students",
       expandable: true,
       expanded: expandedSections.students,
       children: [
@@ -194,28 +229,24 @@ export default function Sidebar() {
       label: "Update Waiting Time",
       icon: <Clock className="w-4 h-4" />,
       path: "/admin/admin-waitingtime",
-      active: activeItem === "waiting-time",
     },
     {
       id: "assign-drivers",
       label: "Assign Drivers",
       icon: <UserPlus className="w-4 h-4" />,
       path: "/admin/assigndrivers",
-      active: activeItem === "assign-drivers",
     },
     {
       id: "print",
       label: "Print",
       icon: <Printer className="w-4 h-4" />,
       path: "/admin/printmap",
-      active: activeItem === "print",
     },
     {
       id: "map",
       label: "Map",
       icon: <MapPin className="w-4 h-4" />,
       path: "/admin/map",
-      active: activeItem === "map",
     },
   ];
 
@@ -225,19 +256,18 @@ export default function Sidebar() {
       label: "Profile",
       icon: <User className="w-4 h-4" />,
       path: "/admin/profile",
-      active: activeItem === "profile",
     },
     {
       id: "logout",
       label: "Logout",
       icon: <LogOut className="w-4 h-4" />,
       path: "/logout",
-      active: activeItem === "logout",
     },
   ];
 
   const SidebarButton = ({ item, children, onClick, className = "" }) => {
     const shouldShowTooltip = !isMobile && isCollapsed;
+    const isActive = activeItem === item.id;
 
     return (
       <div className="group relative">
@@ -247,9 +277,9 @@ export default function Sidebar() {
               ? "justify-center px-2"
               : "justify-between px-3"
           } py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-            item.active
-              ? "bg-blue-50 text-blue-700 border-l-4 border-blue-500 hover:bg-blue-100"
-              : "text-gray-700 hover:bg-gray-50"
+            isActive
+              ? "bg-blue-600 text-white shadow-md hover:bg-blue-700"
+              : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
           } ${className}`}
           onClick={onClick}
         >
@@ -258,7 +288,7 @@ export default function Sidebar() {
               !isMobile && isCollapsed ? "justify-center" : "space-x-3"
             }`}
           >
-            {item.icon}
+            <div className={isActive ? "text-white" : ""}>{item.icon}</div>
             {(!isCollapsed || isMobile) && <span>{item.label}</span>}
           </div>
           {children}
@@ -377,28 +407,35 @@ export default function Sidebar() {
                     }`}
                   >
                     <div className="space-y-1 pt-1">
-                      {item.children.map((child, index) => (
-                        <div key={child.id} className="group relative">
-                          <button
-                            className={`w-full flex items-center space-x-3 px-3 py-2 text-sm rounded-lg transition-all duration-150 ${
-                              activeItem === child.id
-                                ? "bg-blue-50 text-blue-700"
-                                : "text-gray-600 hover:bg-gray-50"
-                            }`}
-                            style={{
-                              transitionDelay: item.expanded
-                                ? `${index * 50}ms`
-                                : "0ms",
-                            }}
-                            onClick={() =>
-                              handleNavigation(child.id, child.path)
-                            }
-                          >
-                            {child.icon}
-                            <span>{child.label}</span>
-                          </button>
-                        </div>
-                      ))}
+                      {item.children.map((child, index) => {
+                        const isChildActive = activeItem === child.id;
+                        return (
+                          <div key={child.id} className="group relative">
+                            <button
+                              className={`w-full flex items-center space-x-3 px-3 py-2 text-sm rounded-lg transition-all duration-150 ${
+                                isChildActive
+                                  ? "bg-blue-600 text-white shadow-md"
+                                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                              }`}
+                              style={{
+                                transitionDelay: item.expanded
+                                  ? `${index * 50}ms`
+                                  : "0ms",
+                              }}
+                              onClick={() =>
+                                handleNavigation(child.id, child.path)
+                              }
+                            >
+                              <div
+                                className={isChildActive ? "text-white" : ""}
+                              >
+                                {child.icon}
+                              </div>
+                              <span>{child.label}</span>
+                            </button>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
