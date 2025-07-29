@@ -262,13 +262,6 @@ export default function UpdatingWaitingTime() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Settings Icon */}
-            <div className="fixed bottom-6 right-6">
-              <Button className="bg-gray-200 hover:bg-gray-300 text-gray-700 p-3 rounded-full shadow-lg">
-                <Settings className="h-5 w-5" />
-              </Button>
-            </div>
           </div>
         </div>
 
