@@ -82,7 +82,7 @@ export default function Greeters() {
       <Sidebar />
 
       {/* Main Content Area */}
-      <div className="flex-1 overflow-x-hidden ml-64 min-h-screen">
+      <div className="flex-1 overflow-x-hidden md:ml-64 min-h-screen w-full">
         {/* Header */}
         <div className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
