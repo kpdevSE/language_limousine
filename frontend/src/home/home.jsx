@@ -1,3 +1,6 @@
+import FooterSection from "@/components/Components/Footer";
+import AnimatedStatsSection from "@/components/Components/HomeComponents/AnimatedCounter";
+import CustomerReviewsCarousel from "@/components/Components/HomeComponents/CustomerReviewCarousel";
 import LanguageLimousineHero from "@/components/Components/HomeComponents/Hero";
 import ParentsTrustSection from "@/components/Components/HomeComponents/ParentTrust";
 import StudentTransportService from "@/components/Components/HomeComponents/StudentTransport";
@@ -14,6 +17,9 @@ export default function Home() {
       <TravelServicesSection />
       <ParentsTrustSection />
       <StudentTransportService />
+      <AnimatedStatsSection />
+      <CustomerReviewsCarousel />
+      <FooterSection />
       <h1>Home Page</h1>
       <Link to={"/admin/admin-dashboard"}>
         <Button>Admin Page</Button>
