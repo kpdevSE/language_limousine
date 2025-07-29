@@ -181,11 +181,6 @@ const StudentTransportService = () => {
           </div>
         </div>
       </div>
-
-      {/* Floating Action Button */}
-      <button className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-orange-500 hover:bg-orange-600 text-white rounded-lg p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-200 z-20">
-        <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
     </div>
   );
 };

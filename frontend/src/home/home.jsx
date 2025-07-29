@@ -6,8 +6,7 @@ import ParentsTrustSection from "@/components/Components/HomeComponents/ParentTr
 import StudentTransportService from "@/components/Components/HomeComponents/StudentTransport";
 import TravelServicesSection from "@/components/Components/HomeComponents/TravelService";
 import NavigationBar from "@/components/Components/Navigationbar";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import ScrollToTopButton from "@/components/Components/ScrollTop";
 
 export default function Home() {
   return (
@@ -20,10 +19,7 @@ export default function Home() {
       <AnimatedStatsSection />
       <CustomerReviewsCarousel />
       <FooterSection />
-      <h1>Home Page</h1>
-      <Link to={"/admin/admin-dashboard"}>
-        <Button>Admin Page</Button>
-      </Link>
+      <ScrollToTopButton />
     </div>
   );
 }

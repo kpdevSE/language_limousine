@@ -272,25 +272,6 @@ const LanguageLimousineHero = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll to Top Button */}
-      <div className="fixed bottom-8 right-8 z-20">
-        <button className="group bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-full shadow-2xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-110">
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 10l7-7m0 0l7 7m-7-7v18"
-            />
-          </svg>
-        </button>
-      </div>
     </div>
   );
 };
