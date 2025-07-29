@@ -124,80 +124,172 @@ const LanguageLimousineHero = () => {
           </p>
         </div>
 
-        {/* Earth Globe */}
+        {/* Earth Globe - Realistic View */}
         <div
           className={`transform transition-all duration-1000 delay-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-green-500 to-blue-600 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse"></div>
-            <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 hover:border-orange-500/50 transition-all duration-500 transform hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-green-500 to-blue-800 rounded-full"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-full"></div>
+          <div className="relative group mb-16 md:mb-20">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-green-500 to-blue-600 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div className="relative w-64 h-32 md:w-96 md:h-48 lg:w-[500px] lg:h-60 overflow-hidden">
+              {/* Earth hemisphere with realistic continents */}
+              <div className="w-full h-full relative">
+                {/* Ocean base */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-700 rounded-b-full"></div>
 
-              {/* Continents simulation */}
-              <div className="absolute top-8 left-8 w-16 h-12 bg-green-600 rounded-lg opacity-80 transform rotate-12"></div>
-              <div className="absolute top-16 right-12 w-12 h-16 bg-green-700 rounded-lg opacity-70 transform -rotate-6"></div>
-              <div className="absolute bottom-12 left-16 w-20 h-8 bg-green-600 rounded-lg opacity-75 transform rotate-45"></div>
-              <div className="absolute bottom-16 right-8 w-14 h-10 bg-green-700 rounded-lg opacity-65 transform -rotate-12"></div>
+                {/* Land masses - Europe/Africa visible */}
+                <div className="absolute top-4 left-8 w-20 h-16 bg-gradient-to-br from-yellow-200 via-yellow-300 to-orange-300 opacity-90 transform rotate-12 rounded-lg"></div>
+                <div className="absolute top-8 left-20 w-16 h-20 bg-gradient-to-br from-green-400 via-green-500 to-green-600 opacity-85 transform -rotate-6 rounded-lg"></div>
+                <div className="absolute top-12 right-20 w-24 h-12 bg-gradient-to-br from-yellow-300 via-orange-300 to-red-300 opacity-80 transform rotate-3 rounded-lg"></div>
+                <div className="absolute top-6 right-8 w-18 h-14 bg-gradient-to-br from-green-300 via-green-400 to-green-500 opacity-75 transform -rotate-12 rounded-lg"></div>
 
-              {/* Rotating animation overlay */}
-              <div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-spin"
-                style={{ animationDuration: "20s" }}
-              ></div>
+                {/* Additional land details */}
+                <div className="absolute top-16 left-12 w-12 h-8 bg-gradient-to-br from-orange-200 to-orange-400 opacity-70 transform rotate-45 rounded"></div>
+                <div className="absolute top-20 right-16 w-14 h-10 bg-gradient-to-br from-green-200 to-green-400 opacity-65 transform -rotate-30 rounded"></div>
 
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-full shadow-inner"></div>
-            </div>
+                {/* Atmospheric glow */}
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/5 to-white/20 rounded-b-full"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/10 to-transparent rounded-b-full"></div>
 
-            {/* Orbiting elements */}
-            <div
-              className="absolute inset-0 animate-spin"
-              style={{ animationDuration: "30s" }}
-            >
-              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full"></div>
-            </div>
-            <div
-              className="absolute inset-0 animate-spin"
-              style={{
-                animationDuration: "25s",
-                animationDirection: "reverse",
-              }}
-            >
-              <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
+                {/* Subtle cloud layer */}
+                <div className="absolute top-2 left-6 w-16 h-6 bg-white/20 rounded-full blur-sm opacity-60"></div>
+                <div className="absolute top-8 right-12 w-20 h-4 bg-white/15 rounded-full blur-sm opacity-50"></div>
+                <div className="absolute top-14 left-16 w-12 h-5 bg-white/20 rounded-full blur-sm opacity-40"></div>
+
+                {/* Terminator line effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent rounded-b-full"></div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
+        {/* Service Cards Section */}
         <div
-          className={`mt-12 md:mt-16 transform transition-all duration-1000 delay-1200 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+          className={`w-full max-w-7xl mx-auto px-4 transform transition-all duration-1000 delay-1200 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-white font-bold text-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-            <span className="relative z-10">Get Started</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {/* Airport Pick-up */}
+            <div className="group relative bg-purple-900/50 border-2 border-orange-500 rounded-lg p-6 md:p-8 hover:bg-purple-800/60 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 md:w-10 md:h-10 text-orange-500"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-white font-bold text-lg md:text-xl mb-2">
+                  AIRPORT
+                </h3>
+                <p className="text-white/80 font-semibold">PICK-UP</p>
+              </div>
+            </div>
+
+            {/* International Transfers */}
+            <div className="group relative bg-purple-900/50 border-2 border-orange-500 rounded-lg p-6 md:p-8 hover:bg-purple-800/60 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 md:w-10 md:h-10 text-orange-500"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="6" />
+                      <circle cx="12" cy="12" r="2" />
+                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-white font-bold text-lg md:text-xl mb-2">
+                  INTERNATIONAL
+                </h3>
+                <p className="text-white/80 font-semibold">TRANSFERS</p>
+              </div>
+            </div>
+
+            {/* 24/7 Support */}
+            <div className="group relative bg-purple-900/50 border-2 border-orange-500 rounded-lg p-6 md:p-8 hover:bg-purple-800/60 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 md:w-10 md:h-10 text-orange-500"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12,6 12,12 16,14" />
+                      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-white font-bold text-lg md:text-xl mb-2">
+                  24/7
+                </h3>
+                <p className="text-white/80 font-semibold">SUPPORT</p>
+              </div>
+            </div>
+
+            {/* Hostel Drop-off */}
+            <div className="group relative bg-purple-900/50 border-2 border-orange-500 rounded-lg p-6 md:p-8 hover:bg-purple-800/60 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10 text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 md:w-10 md:h-10 text-orange-500"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.46 9-11V7l-10-5z" />
+                      <path
+                        d="M9 12l2 2 4-4"
+                        stroke="white"
+                        strokeWidth="2"
+                        fill="none"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-white font-bold text-lg md:text-xl mb-2">
+                  HOSTEL
+                </h3>
+                <p className="text-white/80 font-semibold">DROP-OFF</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-orange-400 rounded-full opacity-20 animate-bounce"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 2}s`,
-            }}
-          />
-        ))}
+      {/* Scroll to Top Button */}
+      <div className="fixed bottom-8 right-8 z-20">
+        <button className="group bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-full shadow-2xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-110">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
