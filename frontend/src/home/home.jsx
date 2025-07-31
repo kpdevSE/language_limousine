@@ -11,6 +11,7 @@ import ScrollToTopButton from "@/components/Components/ScrollTop";
 export default function Home() {
   return (
     <div>
+      //main components of home page
       <NavigationBar />
       <LanguageLimousineHero />
       <TravelServicesSection />
